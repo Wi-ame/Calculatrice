@@ -13,14 +13,14 @@ import com.cscorner.calculatrice.database.DatabaseHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity2 extends AppCompatActivity {
-    private DatabaseHelper login;
+    private DatabaseHelper log;
     private EditText usernameEditText;
     private EditText passwordEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        login = new DatabaseHelper(this);
+        log = new DatabaseHelper(this);
         usernameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
 
@@ -51,7 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
                String password =passwordEditText.getText().toString();
 
 
-               boolean isAuthenticated = login.authenticateUser(email, password);
+               boolean isAuthenticated = log.authenticateUser(email, password);
 
                if (isAuthenticated) {
 
